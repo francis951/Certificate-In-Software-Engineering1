@@ -5,8 +5,8 @@ from django.contrib import messages
 # Create your views here.
 #read data
 def data_read(request):
-    context = {'data_read': GENQModels.objects.all()}
-    return render(request, 'Data_output.html', context)
+    customer = GENQModels.objects.all()
+    return render(request, 'Data_output.html', {'customer':customer})
 #post data
 def form_data(request, id =None):
     form = GENQModelsForm()

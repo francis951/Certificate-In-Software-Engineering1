@@ -4,13 +4,16 @@
 
 {% block nav-btn %}
     <a href="{% url 'data_create' %}" id="btn-nav" class="btn btn-outline-light">Go home</a>
+    <button class="btn btn-outline-success me-2" type="button" href="{% url}">Register</button>
 {% endblock nav-btn %}
     
 <!--Page content-->
 
 {% block content %}
     <div class="container mt5">
+        <button class="btn btn-outline-success me-2" type="button" href="{% url}">Register</button>
         <h5 class="card p-2 bg-warning text-center mb-3">List Of GENQ Customers</h5>
+        
         <table class="table table-bordered text-light" style="text-align: center;">
             <thead class="table-warning">
                 <tr>
@@ -28,17 +31,29 @@
                     <th colspan="2" style="width: 8%;">Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="color: black;">
                 
-                {% for data in data_read %}
+                {% for customers in customer %}
                     <tr>
-                        <td>{{ data.l_name }}</td>
-                        <td>{{ data.phone1 }}</td>
-                        <td>{{ data.email }}</td>
-                        <td class="bg-warning">
-                            <a href="{% url 'data_update' data.id %}" class="btn btn-sm"></a>
+                        <td>{{ customers.f_name }}</td>
+                        <td>{{ customers.l_name }}</td>
+                        <td>{{ customers.date }}</td>
+                        <td>{{ customers.gender }}</td>
+                        <td>{{ customers.country }}</td>
+                        <td>{{ customers.state }}</td>
+                        <td>{{ customers.town }}</td>
+                        <td>{{ customers.zip }}</td>
+                        <td>{{ customers.phone1 }}</td>
+                        <td>{{ customers.phone2 }}</td>
+                        <td>{{ customers.email }}</td>
+                        <td class="bg-primary">
+                           
+                           {% comment %}
+                             <!-- <a href="{% url 'data_update' data.id %}" class="btn btn-sm"></a> -->
+                           {% endcomment %}
+                            
                         </td>
-                        <td class="bg-secondary">
+                        <td class="bg-info">
                             <a href="/data_delete/{{ data.id }}" class="btn btn-sm"></a>
                         </td>
                         {% empty %}
