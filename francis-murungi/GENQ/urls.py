@@ -21,6 +21,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
      # C (Create)
     path('', views.form_data, name='form_data'),
+    #R (Reads)
+    path('data/', views.data_read, name='data_read'),
+    #Update
+    path('<int:id>/', views.form_data, name='update_data'),
     # D (Delete)
     path('data_delete/<str:candidate_id>/', views.data_delete, name='data_delete'),
 ]

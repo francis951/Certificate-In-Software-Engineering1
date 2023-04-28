@@ -6,16 +6,24 @@ class GENQModelsForm(forms.ModelForm):
         model = GENQModels
         fields = ('f_name','l_name', 'date', 'gender', 'country', 'state','town', 'zip','phone1','phone2', 'email')
 
-        labels ={
+        labels = {
             'f_name': 'First Name',
             'l_name': 'Last Name',
-            'email':'Email',
+            'email': 'Email',
         }
         #placeholders
-        widget = {
-            'f_name' : forms.TimeInput(attrs={'placeholder':'Your name'}),
-            'phone1' : forms.TimeInput(attrs={'placeholder':'Your phone'}),
-            'email' : forms.TimeInput(attrs={'placeholder':'Your email'}),
+        widgets = {
+            'f_name' : forms.TextInput(attrs={'placeholder':'Your First Name'}),
+            'l_name' : forms.TextInput(attrs={'placeholder':'Your Last Name'}),
+            'date' : forms.TextInput(attrs={'placeholder':'Your Date Of Birth'}),
+            # 'gender' : forms.TextInput(attrs={'placeholder':'Your Gender'}),
+            'country' : forms.TextInput(attrs={'placeholder':'Your Country'}),
+            'state' : forms.TextInput(attrs={'placeholder':'Your State'}),
+            'town' : forms.TextInput(attrs={'placeholder':'Your Town'}),
+            # 'zip' : forms.TextInput(attrs={'placeholder':'Your zipcode'}),
+            'phone1' : forms.TextInput(attrs={'placeholder':'Your phone 1'}),
+            'phone2' : forms.TextInput(attrs={'placeholder':'Your phone 2'}),
+            'email' : forms.TextInput(attrs={'placeholder':'Your email'}),
         }
         
     
