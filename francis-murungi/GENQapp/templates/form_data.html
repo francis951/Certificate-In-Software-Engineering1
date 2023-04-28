@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container jumbotron">
+        <h1 class="text-center bg-dark text-white">GenQ KYC Form</h1>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            <div class="row align-items-center">
+                <h2>Bio Data</h2><hr>
+                <div class="col">
+                    {{ form.f_name | as_crispy_field }}
+                </div>
+                <div class="col">
+                    {{ form.l_name | as_crispy_field }}
+                </div>
+                <div class="col">
+                    {{ form.date | as_crispy_field }}
+                </div>
+                <div class="col">
+                    {{ form.gender | as_crispy_field }}
+                </div>
+            </div>
+            <div>
+                <div class="row align-items-center">
+                    <h2>Location</h2><hr>
+                    <div class="col">
+                        {{ form.country | as_crispy_field }}
+                    </div>
+                    <div class="col">
+                        {{ form.state | as_crispy_field }}
+                    </div>
+                    <div class="col">
+                        {{ form.town | as_crispy_field }}
+                    </div>
+                    <div class="col">
+                        {{ form.zip | as_crispy_field }}
+                    </div>
+                </div>
+                <div>
+                    <div class="row align-items-center">
+                        <h2>Contact and Adress</h2><hr>
+                    <div class="col">
+                        {{ form.phone1 | as_crispy_field }}
+                    </div>
+                    <div class="col">
+                        {{ form.phone2 | as_crispy_field }}
+                    </div>
+                    <div class="">
+                        {{ form.email | as_crispy_field }}
+                    </div>
+                    </div>
+                    <div>
+            <div class="mt-5">
+                <hr>
+                <button type="submit" class="btn btn-warning btn-width">Submit</button>
+                <button type="reset" class="btn btn-warning btn-width ms-2">Reset</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
