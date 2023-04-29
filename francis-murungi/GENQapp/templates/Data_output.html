@@ -2,17 +2,11 @@
 
 <!--Navbar-->
 
-{% block nav-btn %}
-    <a href="{% url 'data_create' %}" id="btn-nav" class="btn btn-outline-light">Go home</a>
-    <button class="btn btn-outline-success me-2" type="button" href="{% url}">Register</button>
-{% endblock nav-btn %}
-    
 <!--Page content-->
-
 {% block content %}
     <div class="container mt5">
-        <button class="btn btn-outline-success me-2" type="button" href="{% url}">Register</button>
-        <h5 class="card p-2 bg-warning text-center mb-3">List Of GENQ Customers</h5>
+        <button class="button btn btn-outline-success btn-info me-2" type="button" ><a href="{% url 'form_data' %}">Register</a></button>
+        <h1 class="text-center bg-dark text-white">List Of GENQ Customers</h1>
         
         <table class="table table-bordered text-light" style="text-align: center;">
             <thead class="table-warning">
@@ -46,16 +40,12 @@
                         <td>{{ customers.phone1 }}</td>
                         <td>{{ customers.phone2 }}</td>
                         <td>{{ customers.email }}</td>
-                        <td class="bg-primary">
-                           
-                           {% comment %}
-                             <!-- <a href="{% url 'data_update' data.id %}" class="btn btn-sm"></a> -->
-                           {% endcomment %}
-                            
-                        </td>
                         <td class="bg-info">
-                            <a href="/data_delete/{{ data.id }}" class="btn btn-sm"></a>
+                            <a href="/data_delete/{{ customers.id }}" class="btn btn-sm">
+                                <i class="fa fa-trash f-size" style="font-size:30px;padding: 2px 10px; color:red"></i>
+                            </a>  
                         </td>
+                          
                         {% empty %}
                         <td>
                             <td colspan="6" style="color: #ff7f7f7f">No Record</td>

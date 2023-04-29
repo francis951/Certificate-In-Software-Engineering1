@@ -11,8 +11,8 @@ class GENQModels(models.Model):
     country = models.CharField(max_length=250)
     state = models.CharField(max_length=250)
     town = models.CharField(max_length=250)
-    zip = models.IntegerField()
+    zip = models.IntegerField(default = 0)
     #address
-    phone1 = models.IntegerField()
-    phone2 = models.IntegerField()
+    phone1 = models.IntegerField(default = 256)
+    phone2 = models.IntegerField(default = 256)
     email = models.EmailField()

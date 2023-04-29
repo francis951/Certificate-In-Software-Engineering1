@@ -16,8 +16,9 @@ def form_data(request, id =None):
             form.save()
             return redirect('/data')
     return render(request, 'form_data.html', {'form': form}) 
+
 #delete
 def data_delete(request, candidate_id):
     candidate = GENQModels.objects.get(id = candidate_id)
     candidate.delete()
-    return redirect('/form_data')
+    return redirect('/data')

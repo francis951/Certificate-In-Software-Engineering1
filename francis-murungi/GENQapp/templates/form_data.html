@@ -3,6 +3,7 @@
 
 {% block content %}
     <div class="container jumbotron">
+        <button class="button btn btn-outline-success btn-info me-2" type="button" ><a href="data">Customers</a></button>
         <h1 class="text-center bg-dark text-white">GenQ KYC Form</h1>
         <form method="POST" autocomplete="off">
             {% csrf_token %}
@@ -58,4 +59,5 @@
             </div>
         </form>
     </div>
+
 {% endblock content %}

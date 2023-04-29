@@ -15,7 +15,7 @@ class GENQModelsForm(forms.ModelForm):
         widgets = {
             'f_name' : forms.TextInput(attrs={'placeholder':'Your First Name'}),
             'l_name' : forms.TextInput(attrs={'placeholder':'Your Last Name'}),
-            'date' : forms.TextInput(attrs={'placeholder':'Your Date Of Birth'}),
+            'date' : forms.TextInput(attrs={'placeholder':'mm/dd/yy'}),
             # 'gender' : forms.TextInput(attrs={'placeholder':'Your Gender'}),
             'country' : forms.TextInput(attrs={'placeholder':'Your Country'}),
             'state' : forms.TextInput(attrs={'placeholder':'Your State'}),
