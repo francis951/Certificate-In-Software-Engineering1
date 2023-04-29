@@ -5,7 +5,7 @@
     <div class="container jumbotron">
         <button class="button btn btn-outline-success btn-info me-2" type="button" ><a href="data">Customers</a></button>
         <h1 class="text-center bg-dark text-white">GenQ KYC Form</h1>
-        <form method="POST" autocomplete="off">
+        <form method="POST" autocomplete="on" onsubmit="myMessage()">
             {% csrf_token %}
             <div class="row align-items-center">
                 <h2>Bio Data</h2><hr>
